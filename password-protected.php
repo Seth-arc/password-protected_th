@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Password Protected
+Plugin Name: AidData Training Hub Password Protection
 Plugin URI: https://wordpress.org/plugins/password-protected/
 Description: A very simple way to quickly password protect your WordPress site with a single password. Please note: This plugin does not restrict access to uploaded files and images and does not work with some caching setups.
 Version: 2.7.4

@@ -1,5 +1,5 @@
-Password Protected
-==================
+AidData Training Hub Password Protection
+========================================
 
 A very simple way to quickly password protect your WordPress site with a single password.
 
@@ -36,8 +36,8 @@ If you are upgrading manually via FTP rather that through the WordPress automati
 Frequently Asked Questions
 --------------------------
 
-__How can I change the WordPress logo to a different image?__  
-Install and configure the [Login Logo](https://wordpress.org/plugins/login-logo/) plugin by Mark Jaquith or the [Uber Login Logo](https://wordpress.org/plugins/uber-login-logo/) plugin. This will change the logo on your password entry page AND also your admin login page.
+__What logo does the password entry page use?__  
+By default the password entry page uses the plugin logo at `assets/images/logodark.png` instead of the default WordPress logo. If you want a different image, swap that file or override the URL with the `password_protected_login_logo_url` filter.
 
 __How can I enable feeds while the site is password protected?__  
 In the settings, check the 'Allow Feeds' checkbox.

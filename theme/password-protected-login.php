@@ -89,9 +89,182 @@ if ( version_compare( $wp_version, '3.9-dev', '>=' ) ) {
 ?>
 
 <style media="screen">
+html {
+	height: 100%;
+	overflow: hidden;
+}
+body.login.login-password-protected {
+	position: relative;
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+	min-height: 100svh;
+	margin: 0;
+	padding: 20px;
+	overflow: hidden;
+	background: #f8fbfa;
+}
 #login_error, .login .message, #loginform { margin-bottom: 20px; }
 .password-protected-text-below { display: inline-block; text-align: center; margin-top: 30px;}
 .password-protected-text-above { text-align: center; margin-bottom: 10px;}
+body.login.login-password-protected #login {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	max-width: 420px;
+	margin: 0 auto;
+	padding: 32px;
+	border: 1px solid rgba(10, 61, 44, 0.08);
+	border-radius: 24px;
+	background: rgba(255, 255, 255, 0.9);
+	box-shadow: 0 24px 60px rgba(10, 61, 44, 0.12);
+	backdrop-filter: blur(12px);
+}
+body.login.login-password-protected #password-protected-logo {
+	margin: 0 0 28px;
+}
+body.login.login-password-protected #password-protected-logo a {
+	background-image: none;
+	width: 100%;
+	height: auto;
+	min-height: 0;
+	margin: 0 auto;
+	padding: 0;
+	text-indent: 0;
+}
+body.login.login-password-protected #password-protected-logo a img {
+	display: block;
+	width: 100%;
+	max-width: 320px;
+	height: auto;
+	margin: 0 auto;
+}
+body.login.login-password-protected .password-protected-hero-background {
+	position: fixed;
+	inset: 0;
+	z-index: 0;
+	overflow: hidden;
+	pointer-events: none;
+	background: linear-gradient(135deg, rgba(17, 87, 64, 0.02) 0%, rgba(26, 128, 95, 0.06) 100%);
+}
+body.login.login-password-protected .password-protected-hero-shape {
+	position: absolute;
+	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	transform-origin: center;
+}
+body.login.login-password-protected .password-protected-hero-shape.shape-1 {
+	top: -200px;
+	left: -100px;
+	width: 400px;
+	height: 400px;
+	background: linear-gradient(135deg, rgba(17, 87, 64, 0.04), rgba(26, 128, 95, 0.06));
+	transform: rotate(15deg);
+	animation: passwordProtectedFloatTriangle1 20s ease-in-out infinite;
+}
+body.login.login-password-protected .password-protected-hero-shape.shape-2 {
+	right: -50px;
+	bottom: -150px;
+	width: 300px;
+	height: 300px;
+	background: linear-gradient(135deg, rgba(26, 128, 95, 0.03), rgba(17, 87, 64, 0.05));
+	transform: rotate(195deg);
+	animation: passwordProtectedFloatTriangle2 25s ease-in-out infinite reverse;
+}
+body.login.login-password-protected .password-protected-hero-shape.shape-3 {
+	top: 40%;
+	right: 15%;
+	width: 200px;
+	height: 200px;
+	background: linear-gradient(135deg, rgba(17, 87, 64, 0.02), rgba(26, 128, 95, 0.04));
+	transform: rotate(45deg);
+	animation: passwordProtectedFloatTriangle3 30s ease-in-out infinite;
+}
+body.login.login-password-protected .password-protected-hero-glow {
+	position: absolute;
+	inset: auto auto -120px -80px;
+	width: 420px;
+	height: 420px;
+	border-radius: 50%;
+	background: radial-gradient(circle, rgba(26, 128, 95, 0.12) 0%, rgba(26, 128, 95, 0) 72%);
+	filter: blur(8px);
+}
+body.login.login-password-protected #login_error,
+body.login.login-password-protected .message {
+	border-radius: 16px;
+}
+body.login.login-password-protected #loginform {
+	margin-bottom: 0;
+}
+body.login.login-password-protected .button.button-primary {
+	border-color: #004e38;
+	background: #004e38;
+	box-shadow: none;
+}
+body.login.login-password-protected .button.button-primary:hover,
+body.login.login-password-protected .button.button-primary:focus {
+	border-color: #0a3d2c;
+	background: #0a3d2c;
+}
+body.login.login-password-protected .wp-pwd .button.wp-hide-pw,
+body.login.login-password-protected .wp-pwd .button.wp-hide-pw:hover,
+body.login.login-password-protected .wp-pwd .button.wp-hide-pw:focus {
+	border-color: #004e38;
+	background: #004e38;
+	color: #ffffff;
+	box-shadow: none;
+}
+body.login.login-password-protected .wp-pwd .button.wp-hide-pw:hover,
+body.login.login-password-protected .wp-pwd .button.wp-hide-pw:focus {
+	border-color: #0a3d2c;
+	background: #0a3d2c;
+}
+body.login.login-password-protected #password_protected_rememberme {
+	accent-color: #004e38;
+}
+@keyframes passwordProtectedFloatTriangle1 {
+	0%, 100% { transform: rotate(15deg) translate3d(0, 0, 0); }
+	50% { transform: rotate(21deg) translate3d(18px, 18px, 0); }
+}
+@keyframes passwordProtectedFloatTriangle2 {
+	0%, 100% { transform: rotate(195deg) translate3d(0, 0, 0); }
+	50% { transform: rotate(188deg) translate3d(-22px, -18px, 0); }
+}
+@keyframes passwordProtectedFloatTriangle3 {
+	0%, 100% { transform: rotate(45deg) translate3d(0, 0, 0); }
+	50% { transform: rotate(52deg) translate3d(0, -22px, 0); }
+}
+@media (max-width: 600px) {
+	body.login.login-password-protected {
+		padding: 16px;
+	}
+	body.login.login-password-protected #login {
+		padding: 24px 20px;
+		border-radius: 20px;
+	}
+	body.login.login-password-protected .password-protected-hero-shape.shape-1 {
+		width: 280px;
+		height: 280px;
+		top: -140px;
+		left: -90px;
+	}
+	body.login.login-password-protected .password-protected-hero-shape.shape-2 {
+		width: 220px;
+		height: 220px;
+		right: -70px;
+		bottom: -120px;
+	}
+	body.login.login-password-protected .password-protected-hero-shape.shape-3 {
+		top: 58%;
+		right: -20px;
+		width: 150px;
+		height: 150px;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	body.login.login-password-protected .password-protected-hero-shape {
+		animation: none;
+	}
+}
 </style>
 
 <?php
@@ -119,8 +292,23 @@ do_action( 'password_protected_login_head' );
 </head>
 <body class="login login-password-protected login-action-password-protected-login wp-core-ui">
 
+<div class="password-protected-hero-background" aria-hidden="true">
+	<div class="password-protected-hero-glow"></div>
+	<div class="password-protected-hero-shape shape-1"></div>
+	<div class="password-protected-hero-shape shape-2"></div>
+	<div class="password-protected-hero-shape shape-3"></div>
+</div>
+
 <div id="login">
-	<h1 class="wp-login-logo" id="password-protected-logo"><a href="<?php echo esc_url( apply_filters( 'password_protected_login_headerurl', home_url( '/' ) ) ); ?>" title="<?php echo esc_attr( apply_filters( 'password_protected_login_headertitle', get_bloginfo( 'name' ) ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+	<?php
+	$logo_file = PASSWORD_PROTECTED_DIR . 'assets/images/logodark.png';
+	$logo_url  = '';
+
+	if ( file_exists( $logo_file ) ) {
+		$logo_url = apply_filters( 'password_protected_login_logo_url', PASSWORD_PROTECTED_URL . 'assets/images/logodark.png' );
+	}
+	?>
+	<h1 class="wp-login-logo" id="password-protected-logo"><a href="<?php echo esc_url( apply_filters( 'password_protected_login_headerurl', home_url( '/' ) ) ); ?>" title="<?php echo esc_attr( apply_filters( 'password_protected_login_headertitle', get_bloginfo( 'name' ) ) ); ?>"><?php if ( ! empty( $logo_url ) ) : ?><img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" /><?php else : ?><?php bloginfo( 'name' ); ?><?php endif; ?></a></h1>
 	<?php do_action( 'password_protected_login_messages' ); ?>
 
 	<?php do_action( 'password_protected_before_login_form' ); ?>

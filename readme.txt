@@ -1,4 +1,4 @@
-=== Password Protected – Password Protect your WordPress Site, Pages, & WooCommerce Products - Restrict Content, Protect WooCommerce Category, and more ===
+=== AidData Training Hub Password Protection ===
 Contributors: wpexpertsio
 Tags: password, maintenance mode, password protect page, password protect, restrict content
 Requires at least: 4.6
@@ -255,6 +255,9 @@ The Limit Login Attempts feature allows you to set the number of failed login at
 
 = How can I enable feeds while the site is password protected? =
 In the settings, check the 'Allow Feeds' checkbox.
+
+= What logo does the password entry page use? =
+By default the password entry page uses the plugin logo at `assets/images/logodark.png` instead of the default WordPress logo. If you want a different image, swap that file or override the URL with the `password_protected_login_logo_url` filter.
 
 = I cannot preview my changes in the Theme Customizer =
 You must be an administrator (have the manage_options capability) and in the Password Protected settings, check the 'Allow Administrators' checkbox.

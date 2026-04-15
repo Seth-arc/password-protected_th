@@ -226,9 +226,9 @@ class Password_Protected_Admin {
 			return 1;
 		}
 
-		$content = _x( 'The Password Protected plugin stores a cookie on successful password login containing a hashed version of the entered password. It does not store any information about the user. The cookie stored is named <code>bid_n_password_protected_auth</code> where <code>n</code> is the blog ID in a multisite network', 'privacy policy content', 'password-protected' );
+		$content = _x( 'The AidData Training Hub Password Protection plugin stores a cookie on successful password login containing a hashed version of the entered password. It does not store any information about the user. The cookie stored is named <code>bid_n_password_protected_auth</code> where <code>n</code> is the blog ID in a multisite network', 'privacy policy content', 'password-protected' );
 
-		wp_add_privacy_policy_content( __( 'Password Protected Plugin', 'password-protected' ), wp_kses_post( wpautop( $content, false ) ) );
+		wp_add_privacy_policy_content( __( 'AidData Training Hub Password Protection', 'password-protected' ), wp_kses_post( wpautop( $content, false ) ) );
 
 	}
 
@@ -239,8 +239,8 @@ class Password_Protected_Admin {
 	
 		$capability             = apply_filters( 'password_protected_options_page_capability', 'manage_options' );
 		$this->settings_page_id = add_options_page(
-            __( 'Password Protected', 'password-protected' ),
-            __( 'Password Protected', 'password-protected' ),
+            __( 'AidData Training Hub Password Protection', 'password-protected' ),
+            __( 'AidData Training Hub Password Protection', 'password-protected' ),
             $capability,
             'password-protected',
             array(
@@ -249,8 +249,8 @@ class Password_Protected_Admin {
 		    )
         );
 		add_menu_page(
-			'Password Protected',
-			'Password Protected',
+			'AidData Training Hub Password Protection',
+			'AidData Training Hub Password Protection',
 			'manage_options',
 			'password-protected',
 			array( $this, 'pp_admin_menu_page_callback' ),
@@ -280,7 +280,7 @@ class Password_Protected_Admin {
 
 		<div class="wrap">
 			<div id="icon-options-general" class="icon32"><br /></div>
-			<h2><?php _e( 'Password Protected Settings', 'password-protected' ) ?></h2>
+			<h2><?php _e( 'AidData Training Hub Password Protection Settings', 'password-protected' ) ?></h2>
 			<form method="post" action="options.php">
 				<?php
 				settings_fields( 'password-protected' );
@@ -461,8 +461,8 @@ class Password_Protected_Admin {
 
 		$current_screen->add_help_tab( array(
 			'id'      => 'PASSWORD_PROTECTED_SETTINGS',
-			'title'   => __( 'Password Protected', 'password-protected' ),
-			'content' => __( '<p><strong>Password Protected Status</strong><br />Turn on/off password protection.</p>', 'password-protected' )
+			'title'   => __( 'AidData Training Hub Password Protection', 'password-protected' ),
+			'content' => __( '<p><strong>Password Protection Status</strong><br />Turn on/off password protection.</p>', 'password-protected' )
 				. __( '<p><strong>Protected Permissions</strong><br />Allow access for logged in users and administrators without needing to enter a password. You will need to enable this option if you want administrators to be able to preview the site in the Theme Customizer. Also allow RSS Feeds to be accessed when the site is password protected.</p>', 'password-protected' )
 				. __( '<p><strong>Password Fields</strong><br />To set a new password, enter it into both fields. You cannot set an `empty` password. To disable password protection uncheck the Enabled checkbox.</p>', 'password-protected' )
 		) );
@@ -476,14 +476,14 @@ class Password_Protected_Admin {
 		// general tab
 		add_settings_section(
 			'password_protected',
-			__( 'Password Protected Configuration', 'password-protected' ),
+			__( 'AidData Training Hub Password Protection Configuration', 'password-protected' ),
 			array( $this, 'password_protected_settings_section' ),
 			$this->options_group
 		);
 
 		add_settings_field(
 			'password_protected_status',
-			__( 'Password Protected Status', 'password-protected' ),
+			__( 'Password Protection Status', 'password-protected' ),
 			array( $this, 'password_protected_status_field' ),
 			$this->options_group,
 			'password_protected'
@@ -836,11 +836,11 @@ class Password_Protected_Admin {
 	 * Help Tab text field
 	 */
 	public function password_protected_help_tab() {
-		echo '<div class="pp-help-notice">
+        echo '<div class="pp-help-notice">
             <p>'
                 . __( 'Password protect your web site. Users will be asked to enter a password to view the site.', 'password-protected' )
                 . '<br />'
-                . __( 'For more information about Password Protected settings, view the "Help" tab at the top of this page.', 'password-protected' )
+                . __( 'For more information about AidData Training Hub Password Protection settings, view the "Help" tab at the top of this page.', 'password-protected' )
          . '</p>
         </div>';
 	}
